@@ -2,14 +2,16 @@ name: test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ previous1 ]
   pull_request:
-    branches: [ main ]
+    branches: [ previous1 ]
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: my-concurrency-group
     steps:
       - name: test1
         run: |
