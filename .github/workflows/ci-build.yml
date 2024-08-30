@@ -24,6 +24,25 @@ on:
 
 
 jobs:
+  codeql_analysis:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: javascript
+
+      - name: Build and analyze
+        uses: github/codeql-action/analyze@v1
+        with:
+          query: codeql-query.ql
   build:
     runs-on: ubuntu-latest
  
