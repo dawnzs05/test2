@@ -26,7 +26,7 @@ on:
 jobs:
   codeql_analysis:
     runs-on: ubuntu-latest
-    environment: production
+
     permissions:
       contents: read
       security-events: write
