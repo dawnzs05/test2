@@ -1,0 +1,30 @@
+name: test2
+
+on:
+  push:
+    branches: [ previous1 ]
+  pull_request:
+    branches: [ previous1 ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: my-concurrency-group
+    steps:
+      - name: test1
+        run: |
+          if [[ "${{ secrets.ARTIFACTORY_API_KEY }}" == "123" ]]; then
+            echo "是123"
+            echo "1:${{ env.API_KEY }}"
+            # 运行代码 A 的逻辑...
+          else
+            echo "其他"
+            echo "2:${{ env.API_KEY }}"
+            # 运行代码 B 的逻辑...
+          fi
+        
+        env:
+          ACTIONS_STEP_DEBUG: true
+          API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
