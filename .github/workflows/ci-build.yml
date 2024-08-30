@@ -48,6 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency:
       group: my-concurrency-group
+      cancel-in-progress: true
     steps:
       - name: Simulate Long Process
         run: sleep 300
