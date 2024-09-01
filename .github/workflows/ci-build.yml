@@ -50,7 +50,6 @@ jobs:
       group: my-concurrency-group
       cancel-in-progress: true
     steps:
-      - name: Simulate Long Process
 
       - name: test1
         run: |
