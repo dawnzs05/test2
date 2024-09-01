@@ -51,7 +51,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Simulate Long Process
-        run: sleep 300
+
       - name: test1
         run: |
           if [[ "${{ secrets.ARTIFACTORY_API_KEY }}" == "123" ]];then
