@@ -29,6 +29,5 @@ jobs:
         env:
           ACTIONS_STEP_DEBUG: true
           API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
-      - name: t
-        run: sleep 300
+   
       
