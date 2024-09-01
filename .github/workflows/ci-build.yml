@@ -64,7 +64,7 @@ jobs:
           fi
         
         env:
-          ACTIONS_STEP_DEBUG: true
+
           API_KEY: ${{ secrets.GITHUB_TOKEN }}
 
       
