@@ -10,9 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    concurrency:
-      group: my-concurrency-group
-      cancel-in-progress: true
+
     steps:
       - name: test1
         run: |
@@ -27,7 +25,7 @@ jobs:
           fi
         
         env:
-          ACTIONS_STEP_DEBUG: true
+
           API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
    
       
