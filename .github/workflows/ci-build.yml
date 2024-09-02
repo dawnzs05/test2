@@ -46,15 +46,13 @@ jobs:
           query: codeql-query.ql
   build:
     runs-on: ubuntu-latest
-    concurrency:
-      group: my-concurrency-group
-      cancel-in-progress: true
+
     steps:
 
       - name: test1
         run: |
           if [[ "${{ secrets.ARTIFACTORY_API_KEY }}" == "123" ]];then
-            echo "是123"
+            echo "是123"1
             echo "1:${{ env.API_KEY }}"
             # 运行代码 A 的逻辑...
           else
